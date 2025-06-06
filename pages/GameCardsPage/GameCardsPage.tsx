@@ -1,6 +1,7 @@
-import { SafeAreaView, StyleSheet, Text, View, Platform } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View, Platform, ScrollView, FlatList } from 'react-native';
 import GameCard from '../../features/GameCard/GameCard';
 import { cardsData } from '../../data/cardsData';
+import { GameListSeparator } from '../../shared/GameListSeparator/GameListSeparator';
 
 export default function GameCardsPage() {
 
@@ -8,9 +9,13 @@ export default function GameCardsPage() {
 
 	return (
 		<SafeAreaView style={styles.safeContainer}>
-			<View style={styles.container}>
-				<GameCard cardData={cardsData[0]} />
-			</View>
+			<FlatList
+				style={styles.container}
+				data={cardsData}
+				renderItem={(value) => (<GameCard cardData={value.item} key={value.item.id} />)}
+				ItemSeparatorComponent={GameListSeparator}
+				ListFooterComponent={GameListSeparator}
+			/>
 		</SafeAreaView>
 	);
 }
@@ -25,7 +30,6 @@ const styles = StyleSheet.create({
 		borderColor: 'green',
 		borderWidth: 2,
 		borderStyle: 'dashed',
-		padding: 20,
-		gap: 20
+		padding: 30,
 	},
 });

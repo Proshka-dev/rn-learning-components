@@ -14,6 +14,10 @@ import AlertPage from './pages/AlertPage/AlertPage';
 import DimensionsPage from './pages/DimensionsPage/DimensionsPage';
 import SafeAreaAndPlatformSpecific from './pages/SafeAreaAndPlatformSpecific/SafeAreaAndPlatformSpecific';
 import GameCardsPage from './pages/GameCardsPage/GameCardsPage';
+import SectionListPage from './pages/SectionListPage/SectionListPage';
+import TextInputPage from './pages/TextInputPage/TextInputPage';
+import SwitchPage from './pages/SwitchPage/SwitchPage';
+import NewLoginFormPage from './pages/NewLoginFormPage/NewLoginFormPage';
 
 const Stack = createNativeStackNavigator();
 
@@ -35,6 +39,10 @@ export default function App() {
 				<Stack.Screen name="DimensionsPage" component={DimensionsPage} />
 				<Stack.Screen name="SafeAreaAndPlatformSpecific" component={SafeAreaAndPlatformSpecific} />
 				<Stack.Screen name="GameCardsPage" component={GameCardsPage} />
+				<Stack.Screen name="SectionListPage" component={SectionListPage} />
+				<Stack.Screen name="TextInputPage" component={TextInputPage} />
+				<Stack.Screen name="SwitchPage" component={SwitchPage} />
+				<Stack.Screen name="NewLoginFormPage" component={NewLoginFormPage} />
 			</Stack.Navigator>
 		</NavigationContainer >
 	);

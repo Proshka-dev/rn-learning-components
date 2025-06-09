@@ -10,11 +10,14 @@ export default function GameCardsPage() {
 	return (
 		<SafeAreaView style={styles.safeContainer}>
 			<FlatList
-				style={styles.container}
+				style={styles.list}
 				data={cardsData}
-				renderItem={(value) => (<GameCard cardData={value.item} key={value.item.id} />)}
+				renderItem={(value) => (<GameCard cardData={value.item} />)}
+				keyExtractor={(value) => (value.id.toString())} // Можно не указывать, если в объекте есть поля key или id
 				ItemSeparatorComponent={GameListSeparator}
-				ListFooterComponent={GameListSeparator}
+				ListHeaderComponent={<Text style={styles.listHeader}>Компонент ListHeaderComponent</Text>}
+				ListFooterComponent={<Text style={styles.listFooter}>Компонент ListFooterComponent</Text>}
+				ListEmptyComponent={<Text>Список пуст</Text>}
 			/>
 		</SafeAreaView>
 	);
@@ -24,12 +27,21 @@ const styles = StyleSheet.create({
 	safeContainer: {
 		flex: 1,
 	},
-	container: {
+	list: {
 		flex: 1,
 		backgroundColor: '#ddd',
 		borderColor: 'green',
 		borderWidth: 2,
 		borderStyle: 'dashed',
-		padding: 30,
+		paddingHorizontal: 30,
 	},
+	listHeader: {
+		borderWidth: 1,
+		borderStyle: 'dashed',
+	},
+	listFooter: {
+		borderWidth: 1,
+		borderStyle: 'dashed',
+		height: 50,
+	}
 });

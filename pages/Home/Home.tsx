@@ -1,5 +1,4 @@
-import { StyleSheet, Text, View, Image, StatusBar, ScrollView } from 'react-native';
-import { StyledInput } from '../../shared/StyledInput/StyledInput';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { StyledButton } from '../../shared/StyledButton/StyledButton';
 import { ViewAnimatedFadeIn } from '../../shared/AnimFadeinText/AnimFadeinText';
 
@@ -28,12 +27,12 @@ export default function Home({ navigation }) {
     }
 
     return (
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
             <ViewAnimatedFadeIn style={styles.fadeinelem}>
                 <Text style={styles.title}>Buttons inside ScrollView</Text>
             </ViewAnimatedFadeIn>
 
-            <ScrollView contentContainerStyle={styles.scrollViewNavButtons} >
+            <View style={styles.scrollViewNavButtons} >
                 <StyledButton
                     title='Login'
                     onPress={() => navigation.navigate('Login')}
@@ -94,11 +93,28 @@ export default function Home({ navigation }) {
                     onPress={() => navigation.navigate('GameCardsPage')}
                 />
 
-            </ScrollView>
+                <StyledButton
+                    title='SectionListPage'
+                    onPress={() => navigation.navigate('SectionListPage')}
+                />
 
+                <StyledButton
+                    title='TextInputPage'
+                    onPress={() => navigation.navigate('TextInputPage')}
+                />
 
+                <StyledButton
+                    title='SwitchPage'
+                    onPress={() => navigation.navigate('SwitchPage')}
+                />
 
-        </View>
+                <StyledButton
+                    title='NewLoginFormPage'
+                    onPress={() => navigation.navigate('NewLoginFormPage')}
+                />
+            </View>
+
+        </ScrollView>
     );
 }
 

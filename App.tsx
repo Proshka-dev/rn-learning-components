@@ -18,6 +18,7 @@ import SectionListPage from './pages/SectionListPage/SectionListPage';
 import TextInputPage from './pages/TextInputPage/TextInputPage';
 import SwitchPage from './pages/SwitchPage/SwitchPage';
 import NewLoginFormPage from './pages/NewLoginFormPage/NewLoginFormPage';
+import NetworkGetDataPage from './pages/NetworkGetDataPage/NetworkGetDataPage';
 
 const Stack = createNativeStackNavigator();
 
@@ -43,6 +44,7 @@ export default function App() {
 				<Stack.Screen name="TextInputPage" component={TextInputPage} />
 				<Stack.Screen name="SwitchPage" component={SwitchPage} />
 				<Stack.Screen name="NewLoginFormPage" component={NewLoginFormPage} />
+				<Stack.Screen name="NetworkGetDataPage" component={NetworkGetDataPage} />
 			</Stack.Navigator>
 		</NavigationContainer >
 	);

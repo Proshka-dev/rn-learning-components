@@ -112,6 +112,11 @@ export default function Home({ navigation }) {
                     title='NewLoginFormPage'
                     onPress={() => navigation.navigate('NewLoginFormPage')}
                 />
+
+                <StyledButton
+                    title='NetworkGetDataPage'
+                    onPress={() => navigation.navigate('NetworkGetDataPage')}
+                />
             </View>
 
         </ScrollView>

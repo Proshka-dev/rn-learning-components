@@ -19,8 +19,34 @@ import TextInputPage from './pages/TextInputPage/TextInputPage';
 import SwitchPage from './pages/SwitchPage/SwitchPage';
 import NewLoginFormPage from './pages/NewLoginFormPage/NewLoginFormPage';
 import NetworkGetDataPage from './pages/NetworkGetDataPage/NetworkGetDataPage';
+import NetworkPostDataPage from './pages/NetworkPostDataPage/NetworkPostDataPage';
 
-const Stack = createNativeStackNavigator();
+// Типизация параметров экранов
+export type RootStackParamList = {
+	Home: undefined; // Без параметров
+	Login: undefined;
+	Drag: undefined;
+	Todo: undefined;
+	SandboxFlex: undefined;
+	ImagesPage: undefined;
+	PressableAndTouchablePage: undefined;
+	ModalPage: undefined;
+	StatusBarPage: undefined;
+	AlertPage: undefined;
+	DimensionsPage: undefined;
+	SafeAreaAndPlatformSpecific: undefined;
+	GameCardsPage: undefined;
+	SectionListPage: undefined;
+	TextInputPage: undefined;
+	SwitchPage: undefined;
+	NewLoginFormPage: undefined;
+	NetworkGetDataPage: undefined;
+	NetworkPostDataPage: undefined;
+	//Profile: { userId: string }; // Параметр userId типа string
+	//Settings: { theme: 'light' | 'dark' }; // Пример сложного типа
+};
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
 
@@ -45,6 +71,7 @@ export default function App() {
 				<Stack.Screen name="SwitchPage" component={SwitchPage} />
 				<Stack.Screen name="NewLoginFormPage" component={NewLoginFormPage} />
 				<Stack.Screen name="NetworkGetDataPage" component={NetworkGetDataPage} />
+				<Stack.Screen name="NetworkPostDataPage" component={NetworkPostDataPage} />
 			</Stack.Navigator>
 		</NavigationContainer >
 	);

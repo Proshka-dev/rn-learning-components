@@ -5,11 +5,21 @@ import { ViewAnimatedFadeIn } from '../../shared/AnimFadeinText/AnimFadeinText';
 // Шрифты
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
+
 import { useEffect } from 'react';
+import { useNavigation } from '@react-navigation/native';
+import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../../App';
+
+type THomeProps = NativeStackScreenProps<RootStackParamList, 'Home'>;
+
+
 SplashScreen.preventAutoHideAsync();
 
 
-export default function Home({ navigation }) {
+export default function Home({ navigation }: THomeProps) {
+
+    //const navigation2 = useNavigation();
 
     //Шрифты
     const [loaded, error] = useFonts({
@@ -59,63 +69,68 @@ export default function Home({ navigation }) {
                 />
 
                 <StyledButton
-                    title='PressableAndTouchablePage'
+                    title='Pressable and Touchable'
                     onPress={() => navigation.navigate('PressableAndTouchablePage')}
                 />
 
                 <StyledButton
-                    title='ModalPage'
+                    title='Modal'
                     onPress={() => navigation.navigate('ModalPage')}
                 />
 
                 <StyledButton
-                    title='StatusBar and ActivityIndicator page'
+                    title='StatusBar and ActivityIndicator'
                     onPress={() => navigation.navigate('StatusBarPage')}
                 />
 
                 <StyledButton
-                    title='AlertPage'
+                    title='Alert'
                     onPress={() => navigation.navigate('AlertPage')}
                 />
 
                 <StyledButton
-                    title='DimensionsPage'
+                    title='Dimensions'
                     onPress={() => navigation.navigate('DimensionsPage')}
                 />
 
                 <StyledButton
-                    title='SafeAreaAndPlatformSpecific'
+                    title='SafeArea and PlatformSpecific'
                     onPress={() => navigation.navigate('SafeAreaAndPlatformSpecific')}
                 />
 
                 <StyledButton
-                    title='GameCardsPage'
+                    title='GameCards'
                     onPress={() => navigation.navigate('GameCardsPage')}
                 />
 
                 <StyledButton
-                    title='SectionListPage'
+                    title='SectionList'
                     onPress={() => navigation.navigate('SectionListPage')}
                 />
 
                 <StyledButton
-                    title='TextInputPage'
+                    title='TextInput'
                     onPress={() => navigation.navigate('TextInputPage')}
                 />
 
                 <StyledButton
-                    title='SwitchPage'
+                    title='Switch'
                     onPress={() => navigation.navigate('SwitchPage')}
                 />
 
                 <StyledButton
-                    title='NewLoginFormPage'
+                    title='NewLoginForm'
                     onPress={() => navigation.navigate('NewLoginFormPage')}
                 />
 
                 <StyledButton
-                    title='NetworkGetDataPage'
+                    title='Network - Get data'
                     onPress={() => navigation.navigate('NetworkGetDataPage')}
+                />
+
+                <StyledButton
+                    title='Network - Post data'
+                    onPress={() => navigation.navigate('NetworkPostDataPage')}
                 />
             </View>
 

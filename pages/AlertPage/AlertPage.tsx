@@ -1,6 +1,8 @@
 import { Image, StyleSheet, Text, View, ImageBackground, Pressable, TouchableHighlight, TouchableOpacity, Modal, Alert } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useState } from 'react';
+import Comp1 from '../../features/Comp1';
+import Comp2 from '../../features/Comp2';
 
 
 export default function AlertPage() {
@@ -26,6 +28,10 @@ export default function AlertPage() {
 		]);
 	}
 
+	function onChildPres() {
+		console.log('Hi');
+	}
+
 	return (
 		<View style={styles.container}>
 			<TouchableOpacity onPress={handlerOnPressShowAlert} style={styles.buttonElement}>
@@ -35,6 +41,12 @@ export default function AlertPage() {
 			<TouchableOpacity onPress={handlerOnPressShowAlert2} style={styles.buttonElement}>
 				<Text>с кастомными кнопками</Text>
 			</TouchableOpacity>
+
+			<Comp1></Comp1>
+			<Comp2 onPress={onChildPres}></Comp2>
+
+
+
 		</View>
 	);
 }

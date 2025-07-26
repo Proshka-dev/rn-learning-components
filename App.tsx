@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, StatusBar, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, Image, StatusBar, SafeAreaView, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import Login from './pages/Login/Login';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -20,6 +20,8 @@ import SwitchPage from './pages/SwitchPage/SwitchPage';
 import NewLoginFormPage from './pages/NewLoginFormPage/NewLoginFormPage';
 import NetworkGetDataPage from './pages/NetworkGetDataPage/NetworkGetDataPage';
 import NetworkPostDataPage from './pages/NetworkPostDataPage/NetworkPostDataPage';
+import NavigationPassParamsPage from './pages/NavigationPassParamsPage/NavigationPassParamsPage';
+import OptionsListPage from './pages/OptionsListPage/OptionsListPage';
 
 // Типизация параметров экранов
 export type RootStackParamList = {
@@ -42,6 +44,8 @@ export type RootStackParamList = {
 	NewLoginFormPage: undefined;
 	NetworkGetDataPage: undefined;
 	NetworkPostDataPage: undefined;
+	NavigationPassParamsPage: { message?: string };
+	OptionsListPage: undefined;
 	//Profile: { userId: string }; // Параметр userId типа string
 	//Settings: { theme: 'light' | 'dark' }; // Пример сложного типа
 };
@@ -52,7 +56,10 @@ export default function App() {
 
 	return (
 		<NavigationContainer>
-			<Stack.Navigator>
+			<Stack.Navigator screenOptions={{
+				// можно указывать те же опции, что и для индивидуальных экранов
+				headerStyle: { backgroundColor: '#e3f3fc' },
+			}}>
 				<Stack.Screen name="Home" component={Home} />
 				<Stack.Screen name="Login" component={Login} options={{ title: 'Login' }} />
 				<Stack.Screen name="Drag" component={DragExample} />
@@ -72,6 +79,25 @@ export default function App() {
 				<Stack.Screen name="NewLoginFormPage" component={NewLoginFormPage} />
 				<Stack.Screen name="NetworkGetDataPage" component={NetworkGetDataPage} />
 				<Stack.Screen name="NetworkPostDataPage" component={NetworkPostDataPage} />
+				<Stack.Screen
+					name="NavigationPassParamsPage"
+					component={NavigationPassParamsPage}
+					// Передача параметра по-умолчанию
+					initialParams={{ message: 'сообщение по-умолчанию' }}
+					options={{
+						title: 'Кастомный заголовок',
+						headerStyle: { backgroundColor: '#6a51ae' },
+						headerTintColor: '#fff',
+						headerTitleStyle: {
+							fontWeight: 'bold',
+							fontSize: 25,
+						},
+						headerRight: () => (<Button title='меню'></Button>),
+						// стиль содержимого этого экрана
+						contentStyle: { backgroundColor: '#e8e4ff' }
+					}}
+				/>
+				<Stack.Screen name="OptionsListPage" component={OptionsListPage} />
 			</Stack.Navigator>
 		</NavigationContainer >
 	);

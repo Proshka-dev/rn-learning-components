@@ -141,6 +141,30 @@ export default function Home({ navigation }: THomeProps) {
 					title='OptionsList demo'
 					onPress={() => navigation.navigate('OptionsListPage')}
 				/>
+
+				<StyledButton
+					title='useRef page'
+					onPress={() => navigation.navigate('UseRefPage')}
+				/>
+
+				<StyledButton
+					title='Управление ребенком из другого ребенка. Метод 1'
+					onPress={() => navigation.navigate('ControlChild')}
+				/>
+				<StyledButton
+					title='Управление ребенком из другого ребенка. Метод 2'
+					onPress={() => navigation.navigate('ControlChildB')}
+				/>
+
+				<StyledButton
+					title='Управление с помощью useImperativeHandle. Метод 3'
+					onPress={() => navigation.navigate('ControlChildC')}
+				/>
+
+				<StyledButton
+					title='Debouncing - задержка обработки'
+					onPress={() => navigation.navigate('DebouncingPage')}
+				/>
 			</View>
 
 		</ScrollView>

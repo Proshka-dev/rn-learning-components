@@ -22,6 +22,11 @@ import NetworkGetDataPage from './pages/NetworkGetDataPage/NetworkGetDataPage';
 import NetworkPostDataPage from './pages/NetworkPostDataPage/NetworkPostDataPage';
 import NavigationPassParamsPage from './pages/NavigationPassParamsPage/NavigationPassParamsPage';
 import OptionsListPage from './pages/OptionsListPage/OptionsListPage';
+import UseRefPage from './pages/UseRefPage/UseRefPage';
+import ControlChild from './pages/ControlChild/ControlChild';
+import ControlChildB from './pages/ControlChildB/ControlChildB';
+import ControlChildC from './pages/ControlChildC/ControlChildC';
+import DebouncingPage from './pages/DebouncingPage/DebouncingPage';
 
 // Типизация параметров экранов
 export type RootStackParamList = {
@@ -46,6 +51,11 @@ export type RootStackParamList = {
 	NetworkPostDataPage: undefined;
 	NavigationPassParamsPage: { message?: string };
 	OptionsListPage: undefined;
+	UseRefPage: undefined;
+	ControlChild: undefined;
+	ControlChildB: undefined;
+	ControlChildC: undefined;
+	DebouncingPage: undefined;
 	//Profile: { userId: string }; // Параметр userId типа string
 	//Settings: { theme: 'light' | 'dark' }; // Пример сложного типа
 };
@@ -55,6 +65,7 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 export default function App() {
 
 	return (
+		<View style={{ flex: 1, paddingTop: 50}}>
 		<NavigationContainer>
 			<Stack.Navigator screenOptions={{
 				// можно указывать те же опции, что и для индивидуальных экранов
@@ -98,8 +109,14 @@ export default function App() {
 					}}
 				/>
 				<Stack.Screen name="OptionsListPage" component={OptionsListPage} />
+				<Stack.Screen name="UseRefPage" component={UseRefPage} />
+				<Stack.Screen name="ControlChild" component={ControlChild} />
+				<Stack.Screen name="ControlChildB" component={ControlChildB} />
+				<Stack.Screen name="ControlChildC" component={ControlChildC} />
+				<Stack.Screen name="DebouncingPage" component={DebouncingPage} />
 			</Stack.Navigator>
 		</NavigationContainer >
+		</View>
 	);
 }
 

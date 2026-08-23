@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
+// import { MaterialIcons } from '@expo/vector-icons';
 
 
 export default function SandboxFlex() {
@@ -13,7 +13,7 @@ export default function SandboxFlex() {
 			<Text style={styles.box4}>4</Text>
 			{/* Иконка */}
 			<View style={styles.shadowBox}><Text>5</Text></View>
-			<MaterialIcons name="delete" size={32} color="green" />
+			{/* <MaterialIcons name="delete" size={32} color="green" /> */}
 
 		</View>
 	);
@@ -27,7 +27,8 @@ const styles = StyleSheet.create({
 		borderWidth: 4,
 		borderStyle: 'dashed',
 		justifyContent: 'space-around',
-		alignItems: 'center'
+		alignItems: 'center',
+		//flexDirection: 'row',
 	},
 	box1: {
 		backgroundColor: 'violet',

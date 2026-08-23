@@ -1,5 +1,4 @@
 import { Image, StyleSheet, Text, View, ImageBackground, Pressable, TouchableHighlight, TouchableOpacity, Modal, StatusBar, ActivityIndicator } from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
 import { useState } from 'react';
 
 import type { StatusBarStyle } from 'react-native';

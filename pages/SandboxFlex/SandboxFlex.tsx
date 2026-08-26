@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function SandboxFlex() {
 
-  console.log('версия 1');
+  console.log('версия 2');
 
 
   return (
